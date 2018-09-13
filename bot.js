@@ -144,8 +144,8 @@ hours = hours - 12;
 if (hours == 0) {
 hours = 12;
 }
-client.channels.find('id', 'أيدي ألروم حق الوقت').setName(`Time - ${hours} : ${ReBeeL} : ${ReBeeeL} ${suffix}`) 
-client.channels.find('id', 'أيدي الروم حق التاريخ').setName(`Date : ${Codes} - ${CodeS} - ${CoDeS}`)
+client.channels.find('id', '489807403949228054').setName(`Time - ${hours} : ${ReBeeL} : ${ReBeeeL} ${suffix}`) 
+client.channels.find('id', '489807440834199552').setName(`Date : ${Codes} - ${CodeS} - ${CoDeS}`)
 }, 1000);
 });
   
