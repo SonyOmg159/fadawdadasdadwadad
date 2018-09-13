@@ -231,19 +231,23 @@ message.channel.send(myroles)
 
 
 
-client.on("guildDelete", guild => {
-    console.log("Left a guild: " + guild.name);
-    if(client.guilds.size > 1) {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-    } else {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-    }
-});
+client.on('ready', function(){
+    var ms = 10000 ;
+    var setGame = [' Ganger ','For | Ever','Perfix ','=','Enjoy!'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`https://www.twitch.tv/n3k4a`);
+    }, ms);
 
-client.on("message", async () => {
-  
 })
-
   
 
   
