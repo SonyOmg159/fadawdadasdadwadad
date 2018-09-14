@@ -1251,7 +1251,7 @@ client.on('message', message => {
 
  message.author.sendMessage(`
  **
-__~~The Ganger Bot~~__ By: Mickey.cm ❤{R}
+***__~~The Ganger Bot~~__ By: Mickey.cm ❤{R}***
 
 
 
@@ -1275,32 +1275,31 @@ __~~The Ganger Bot~~__ By: Mickey.cm ❤{R}
              Admin Commands
 ╚[❖════════════❖]╝
 
- ❖ =kick <mention > ➾ kick member from server
+*** ❖ =kick <mention > ➾ kick member from server***
 
- ❖ =clear ➾ clear chat ( not ready yet fixing)
+***❖ =clear ➾ clear chat***
  
  ❖ =mute < mention > ➾ mute member
-
- ❖ =unmute <mention> ➾ unmute member
+***❖ =unmute <mention> ➾ unmute member***
 
 
   
- ❖ =bc <message> ➾ message all members in server
+ ***❖ =bc <message> ➾ message all members in server***
 
 
 ╔[❖════════════❖]╗
             General  Commands
 ╚[❖════════════❖]╝
 
-❖ =roll <number> ➾ role 
+***❖ =roll <number> ➾ role ***
 
-❖ =avatar ➾ see date
+***❖ =avatar ➾ see date***
 
-❖ =member ➾ members info
+***❖ =member ➾ members info***
 
-❖ =help   ➾ help by Mickey <3
+***❖ =help   ➾ help by Mickey <3***
 
-❖ =ping   ➾ to see ping
+***❖ =ping   ➾ to see ping***
  
 
 
