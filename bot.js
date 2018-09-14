@@ -1056,8 +1056,21 @@ client.on('message',async message => {
 });
 
 
-
-
+client.on('message', msg => {
+  if(msg.content === 'باك'){
+msg.reply('ولـكم ء , آرحب من جآنا , . :heart_eyes: ')
+}
+});
+client.on('message', msg => {
+  if(msg.content === 'سلام عليكم'){
+msg.reply('عليكم السلام الله يقوي ايمانك')
+}
+});
+client.on('message', msg => {
+  if(msg.content === 'هلا'){
+msg.reply('هلا حبي')
+}
+});
 
 
 
