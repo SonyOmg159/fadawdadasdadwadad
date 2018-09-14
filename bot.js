@@ -1240,7 +1240,93 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help") {
+		 message.channel.send('**The Message Was Sent On Private**');
+            
+	
+		 
 
+
+ message.author.sendMessage(`
+ **
+__~~The Ganger Bot~~__ By: Mickey.cm ❤{R}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+╔[❖════════════❖]╗
+             Prefix = ' = '
+╚[❖════════════❖]╝
+
+╔[❖════════════❖]╗
+             Admin Commands
+╚[❖════════════❖]╝
+
+ ❖ =kick <mention > ➾ kick member from server
+
+ ❖ =clear ➾ clear chat ( not ready yet fixing)
+ 
+ ❖ =mute < mention > ➾ mute member
+
+ ❖ =unmute <mention> ➾ unmute member
+
+
+  
+ ❖ =bc <message> ➾ message all members in server
+
+
+╔[❖════════════❖]╗
+            General  Commands
+╚[❖════════════❖]╝
+
+❖ =roll <number> ➾ role 
+
+❖ =avatar ➾ see date
+
+❖ =member ➾ members info
+
+❖ =help   ➾ help by Mickey <3
+
+❖ =ping   ➾ to see ping
+ 
+
+
+
+
+❖ =invite ➾ bot invite link
+
+╔[❖════════════❖]╗
+                    Welcome
+╚[❖════════════❖]╝
+
+
+==================================================================
+
+Server support: https://discord.gg/UnRrmEF
+
+==================================================================
+
+bot invite link: https://discordapp.com/api/oauth2/authorize?client_id=487734649003442178&permissions=0&scope=bot
+
+==================================================================
+
+`);
+
+    }
+});
 
 
 
