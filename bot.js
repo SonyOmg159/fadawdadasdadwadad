@@ -1410,7 +1410,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-     if(message.content.startsWith(prefix + "مسح")) {
+     if(message.content.startsWith(prefix + "clear")) {
              if(!message.channel.guild) return message.reply(' ');
          var args = message.content.split(" ").slice(1);
  if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You need MANAGE_MESSAGES permission noob');
