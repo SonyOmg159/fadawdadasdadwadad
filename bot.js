@@ -187,7 +187,13 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
 
 
 
-
+client.on('message', message=> {
+    if (message.author.bot) return;
+    if (message.isMentioned(client.user))
+    {
+    message.reply(" يليل شتبي يا ورع :rage: :joy:");
+    }
+});
 
 
 
