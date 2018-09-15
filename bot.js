@@ -76,50 +76,7 @@ client.user.setActivity("Gangers perfix |=|",{type: 'PLAYING'})
   
   
   
-  client.on("message", async message => {
-if(message.channel.type === "dm") return;
- if(message.content === (prefix + "B-Time")) { /// حط اي كلمة تبيها
- if (!message.channel.guild) return message.reply('**هذا الامر للسيرفرات فقط**');
-    let uptime = client.uptime;
 
-    let days = 0;
-    let hours = 0;
-    let minutes = 0;
-    let seconds = 0;
-    let notCompleted = true;
-
-    while (notCompleted) {
-
-        if (uptime >= 8.64e+7) { ///لا تعدل اي شي 
-
-            days++;
-            uptime -= 8.64e+7;
-
-        } else if (uptime >= 3.6e+6) {
-
-            hours++;
-            uptime -= 3.6e+6;
-
-        } else if (uptime >= 60000) {
-
-            minutes++;
-            uptime -= 60000;
-
-        } else if (uptime >= 1000) {
-            seconds++;
-            uptime -= 1000;
-
-        }
-
-        if (uptime < 1000)  notCompleted = false;
-
-    }
-
-    message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec` + "`");
-
-
-}
- });
   
   
   
@@ -377,7 +334,7 @@ client.on("ready", () => {
 
 
 client.on('message', message => {
-    var prefix = "=";
+    var prefix = "f!";
    
         if (message.author.id === client.user.id) return;
         if (message.guild) {
@@ -1117,11 +1074,7 @@ client.on('message', msg => {
 msg.reply('عليكم السلام الله يقوي ايمانك')
 }
 });
-client.on('message', msg => {
-  if(msg.content === 'هلا'){
-msg.reply('هلا حبي')
-}
-});
+
 
 
 client.on('message', message => {
@@ -1409,34 +1362,26 @@ client.on("message", message => {
 
 
 
-client.on('message', message => {
-     if(message.content.startsWith(prefix + "clear")) {
-             if(!message.channel.guild) return message.reply(' ');
-         var args = message.content.split(" ").slice(1);
- if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You need MANAGE_MESSAGES permission noob');
-  if (!args[0]) return message.channel.send('You didn\'t provide any number!!!');
-
-  message.channel.bulkDelete(args[0]).then(() => {
-    const embed = new Discord.RichEmbed()
-      .setColor(0xF16104)
-      .setDescription(`Cleared ${args[0]} messages.`);
-    message.channel.send({ embed });
-
-    const actionlog = message.guild.channels.find('name', 'logs');
-
-    if (!actionlog) return message.channel.send('Can\'t find action-log channel. Are you sure that this channel exists and I have permission to view it? **CANNOT POST LOG.**');
-    const embedlog = new Discord.RichEmbed()
-      .setDescription('~Purge~')
-      .setColor(0xF16104)
-      .addField('Purged By', `<@${message.author.id}> with ID ${message.author.id}`)
-      .addField('Purged in', message.channel)
-      .addField('Time', message.createdAt);
-    actionlog.send(embedlog);
-   
+client.on("message", message => {
+              var args = message.content.substring(prefix.length).split(" ");
+              if (message.content.startsWith(prefix + "clear")) {
+                  if(!message.channel.guild) return message.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');         
+     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
+          var msg;
+          msg = parseInt();
+        
+        message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+        message.channel.sendMessage("", {embed: {
+          title: "تــم مسح الشات",
+          color: 0x06DF00,
+          footer: {
+            
+          }
+        }}).then(msg => {msg.delete(9000)});
+                            }
+  
+       
   });
-};
-
-});
 
 
 client.on('message', message => {
@@ -1457,7 +1402,24 @@ client.on('message', message => {
 });
 
 
+ client.on('message',function(message) {
+  if (message.author.bot) return;
+var prefix = "=";
+                  if(!message.channel.guild) return;
 
+                    if (message.content === prefix + "members") {
+ const embed = new Discord.RichEmbed()
+
+    .setDescription(`**Members info :sparkles:
+:green_heart: online:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}
+:heart:  dnd:       ${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
+:yellow_heart:  idle:     ${message.guild.members.filter(m=>m.presence.status == 'idle').size}
+:diamond_shape_with_a_dot_inside:   membersCount:  ${message.guild.memberCount - message.guild.members.filter(m=>m.user.bot).size}
+:bulb: bots: ${message.guild.members.filter(m=>m.user.bot).size} **`)
+         message.channel.send({embed});
+
+    }
+      });
 
 
 
