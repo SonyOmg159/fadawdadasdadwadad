@@ -24,7 +24,7 @@ client.on('ready', () => {
 
 
 client.on("message", message => {
-    if (message.content === (prefix + "fsdfasdf")) {
+    if (message.content === (prefix + "help")) {
      const embed = new Discord.RichEmbed() 
          .setColor("#580e6b")
          .setThumbnail(message.author.avatarURL)
